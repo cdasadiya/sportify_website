@@ -1,0 +1,25 @@
+"use client";
+
+import { motion } from "framer-motion";
+import React from "react";
+
+interface SectionWrapperProps {
+  children: React.ReactNode;
+  id?: string;
+  className?: string;
+}
+
+export default function SectionWrapper({ children, id, className = "" }: SectionWrapperProps) {
+  return (
+    <motion.section
+      id={id}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className={className}
+    >
+      {children}
+    </motion.section>
+  );
+}
