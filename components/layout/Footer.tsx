@@ -144,6 +144,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
+                aria-label="Email address for newsletter subscription"
                 className="w-full px-4 py-2.5 rounded-lg bg-[#1E293B] border border-slate-700 text-sm text-white placeholder-slate-500 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 outline-none transition-all duration-300"
               />
               <motion.button

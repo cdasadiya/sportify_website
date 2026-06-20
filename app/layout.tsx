@@ -16,6 +16,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sportify.com"),
   title: "Sportify — Your Ultimate Sports Destination",
   description:
     "Book world-class sports facilities, join coaching programs, compete in tournaments, and become part of an active sports community at Sportify — India's premier multi-sports arena.",
@@ -94,6 +95,51 @@ export default function RootLayout({
                 }
               }, true);
             `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SportsActivityLocation",
+              "@id": "https://sportify.com/#sportsactivitylocation",
+              "name": "Sportify Sports Arena",
+              "url": "https://sportify.com",
+              "logo": "https://sportify.com/favicon.ico",
+              "image": "https://sportify.com/images/hero.png",
+              "description": "Book world-class sports facilities, join coaching programs, compete in tournaments, and become part of an active sports community at Sportify — India's premier multi-sports arena.",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Outer Ring Road, Sector 5",
+                "addressLocality": "Bengaluru",
+                "addressRegion": "Karnataka",
+                "postalCode": "560034",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 12.94819777553556,
+                "longitude": 77.62534571932314
+              },
+              "telephone": "+919876543210",
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                  ],
+                  "opens": "05:00",
+                  "closes": "23:00"
+                }
+              ]
+            }),
           }}
         />
       </head>
