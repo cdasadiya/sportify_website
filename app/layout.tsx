@@ -77,6 +77,22 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#020617" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.addEventListener('error', function(event) {
+                if (event.filename && event.filename.includes('chrome-extension://')) {
+                  event.stopImmediatePropagation();
+                }
+              }, true);
+              window.addEventListener('unhandledrejection', function(event) {
+                if (event.reason && (event.reason.stack || '').includes('chrome-extension://')) {
+                  event.stopImmediatePropagation();
+                }
+              }, true);
+            `,
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col bg-[#020617] text-[#F8FAFC] antialiased">
         {children}
