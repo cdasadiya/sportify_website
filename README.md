@@ -125,6 +125,22 @@ npm run build
 npm run start
 ```
 
+### 🖥️ How to Run & Check the Website
+
+#### 1. Running the Site
+- **Development Mode**: Run `npm run dev` to boot the hot-reloading development server. Navigate to `http://localhost:3000` in your browser.
+- **Production Build Testing**: Run `npm run build` followed by `npm run start` to run and verify the optimized server package locally at `http://localhost:3000`.
+
+#### 2. Visual & Functional Verification Checklist
+When testing the site, verify the following core interactions:
+- **Responsive Adaptability**: Open browser Developer Tools (`F12`) and test responsiveness. Confirm the layout adjusts nicely from mobile screens (375px) up to large desktop views.
+- **Smooth Scroll & Navigation Links**: Click on each item in the header navbar (About, Facilities, Membership, Tournament, Gallery, Contact) to verify smooth scroll behavior. Test the mobile hamburger toggle panel.
+- **Membership Pricing Toggle**: Click "Yearly Billing" in the pricing section. Confirm that values calculate and update instantly with the 20% annual discount.
+- **Gallery Filters & Lightbox**: Click the categories filter list to verify sorting works, and click any photo to confirm the fullscreen Lightbox modal opens and closes with overlay-fade animations.
+- **Testimonials Slide**: Confirm reviews auto-cycle every 7 seconds, and verify that navigation dots and left/right arrows slide reviews manually.
+- **FAQ Accordion**: Toggle questions in the FAQ block to verify accordion drop-downs open/close smoothly.
+- **Contact Form Validation**: Try submitting the form empty to trigger the warning, then complete the details and verify the success banner displays.
+
 ---
 
 ## 📁 Directory Structure
