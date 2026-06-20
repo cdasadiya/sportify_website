@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -77,7 +78,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="theme-color" content="#020617" />
-        <script
+        <Script
+          id="suppress-extension-errors"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.addEventListener('error', function(event) {
